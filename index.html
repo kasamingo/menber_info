@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="wrap">
+        <h1>⬇️あなたの社員番号を入力してね</h1><br>
+        <input type="text" id="num">
+        <button id="btn">プライバシー情報表示</button>
+        <p>※(276,490,534のどれかを入力して下さい)</p>
+    </div>
+
+    <div id="con">
+        <div id="content"></div>
+        <div id="content2"></div>
+    </div>
+
+    <script>
+        var num = document.getElementById('num');
+        var btn = document.getElementById('btn');
+        var content = document.getElementById('content');
+        var content2 = document.getElementById('content2');
+        var array = [276,490,534,];
+
+        btn.addEventListener('click',() => {
+            var text = num.value;
+            if(text == array[0]){
+                content.innerHTML = '・山田太郎';
+                setTimeout(() => {
+                    content2.innerHTML = '・24歳<br>・A型<br>・山田さん、本日定例会議に出席して下さい<br>・その他個人情報xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                },2000)
+            }else if(text == array[1]){
+                content.innerHTML = '・鈴木大輝';
+                setTimeout(() => {
+                    content2.innerHTML = '・20歳<br>・O型<br>・鈴木さん書類が出来ましたので本日中にAB室まで取りに来て下さい<br>・その他個人情報xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                },2000)
+            }else if(text == array[2]){
+                content.innerHTML = '・池田和也';
+                setTimeout(() => {
+                    content2.innerHTML = '・28歳<br>・B型<br>・池田さん、給与明細をメールに送付したのでご確認ください。<br>・その他個人情報xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+                },2000)
+            }else{
+                content.innerHTML = '正しく入力してください';   
+            }
+        })
+    </script>
+</body>
+</html>
